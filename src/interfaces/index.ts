@@ -1,5 +1,5 @@
 export interface IProsCard extends ISerie {
-    showDrawer : () => void;
+    showDrawer : (params : ISerie) => void;
    
 }
 
