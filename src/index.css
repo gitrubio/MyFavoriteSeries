@@ -1,11 +1,10 @@
 article {
   position: relative;
-  background-color: red;
+  background-color: black;
   transition: all .3s  ease;
 }
 
 article img:first-child {
-  box-shadow: 0 60px 60px -60px rgba(0,30,255,0.5);
   border-radius: 4px;
   object-fit: cover;
   width: 100%;
@@ -23,6 +22,7 @@ article img:last-child {
 }
 
 article:hover {
+  box-shadow: 0 60px 60px -60px rgba(0,30,255,0.5);
   transform:
       perspective(250px)
       rotateX(5deg)
