@@ -1,7 +1,7 @@
 {
   "name": "series-page",
   "private": true,
-  "homepage": "https://gitrubio.github.io/MyFavoriteSeries/dist",
+  "homepage": "https://gitrubio.github.io/MyFavoriteSeries",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
