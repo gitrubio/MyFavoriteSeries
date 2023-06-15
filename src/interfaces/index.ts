@@ -10,3 +10,8 @@ export interface ISerie {
     imgFont : string
     mainCharacterImg : string
 }
+
+export interface RandomHeadersProps {
+    imgUrl : string
+}
+

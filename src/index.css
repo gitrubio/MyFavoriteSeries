@@ -1,5 +1,6 @@
 body {
   background-color: #141414;
+  margin: 0;
 }
 article {
   position: relative;
@@ -55,4 +56,30 @@ article:hover::before{
 article:hover img:last-child{
   opacity: 1;
   /*transform : translateY(.1%)*/ 
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  
+}
+.video-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
 }

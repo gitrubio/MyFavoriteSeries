@@ -4,6 +4,7 @@ import CardSerie from "./components/CardSerie";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
+import RandomSerie from "./components/RandomSerie";
 function App() {
   const [open, setOpen] = useState(false);
   const [serieSelect, setSerieSelect] = useState<ISerie>({
@@ -122,20 +123,29 @@ function App() {
     setOpen(true);
   };
   return (
-    <>
-      <Box sx={{ height: 50 }}>
+    <div>
+      <Box>
         <ResponsiveAppBar />
       </Box>
+      <Box
+        sx={{
+          height: 500,
+          width: "100%",
+          margin: 0 /*  position: 'absolute' */,
+        }}
+      >
+        <RandomSerie />
+      </Box>
       <Box key={"xd"}>
-        <Grid container spacing={1} direction={"row"}>
-          {dataSeries.map((serie, index) => (
-            <Grid item>
+        <Grid container spacing={1} direction={"row"} justifyContent={"center"}>
+          {dataSeries.map((serie) => (
+            <Grid item key={serie.title}>
               <CardSerie {...serie} showDrawer={showDrawer} />
             </Grid>
           ))}
         </Grid>
       </Box>
-    </>
+    </div>
   );
 }
 
