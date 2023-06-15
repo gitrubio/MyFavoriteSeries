@@ -1,14 +1,24 @@
-import React from 'react'
-import { Card } from 'antd';
-import { IProsCard } from '../interfaces';
+import React from "react";
 
-export default function CardSerie({title,characters,description,imgFont,mainCharacterImg,showDrawer} : IProsCard) {
+import { IProsCard } from "../interfaces";
+import { Card, CardActionArea } from "@mui/material";
+
+export default function CardSerie({
+  title,
+  characters,
+  description,
+  imgFont,
+  mainCharacterImg,
+  showDrawer,
+}: IProsCard) {
   return (
-    <Card onClick={()=>showDrawer({title,characters,description,imgFont,mainCharacterImg})} title={title} hoverable style={{ width: 350}}>
-    <article>
-      <img src={imgFont} />
-      <img src={mainCharacterImg} />
-    </article>
-  </Card>
-  )
+    <Card sx={{ width: 270, marginTop: 5 }}>
+      <CardActionArea>
+          <article>
+            <img src={imgFont} />
+            <img src={mainCharacterImg} />
+          </article>
+      </CardActionArea>
+    </Card>
+  );
 }

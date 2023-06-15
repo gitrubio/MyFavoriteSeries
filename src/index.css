@@ -1,6 +1,9 @@
+body {
+  background-color: #141414;
+}
 article {
   position: relative;
-  background-color: black;
+  background-color: #141414 ;
   transition: all .3s  ease;
 }
 
@@ -24,9 +27,8 @@ article img:last-child {
 article:hover {
   box-shadow: 0 60px 60px -60px rgba(0,30,255,0.5);
   transform:
-      perspective(250px)
+      scale(1.2)
       rotateX(5deg)
-      translateY(-5%)
       translate(0)
 }
 

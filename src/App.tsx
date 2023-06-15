@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Row, Space, Col, Drawer, Typography, Avatar } from "antd";
 import { ISerie } from "./interfaces";
-import { UserOutlined } from "@ant-design/icons";
-import CardSerie from "./Components/CardSerie";
+import CardSerie from "./components/CardSerie";
+import { Box } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
 function App() {
   const [open, setOpen] = useState(false);
   const [serieSelect, setSerieSelect] = useState<ISerie>({
@@ -122,36 +123,18 @@ function App() {
   };
   return (
     <>
-    <Row justify={'center'} style={{ margin: 10}}>
-    <Typography.Title level={2}>Mis Series Favoritas</Typography.Title>
-    </Row>
-    <Row gutter={[16, 16]} wrap justify={"start"}>
-      <Drawer
-        title={serieSelect.title}
-        placement="right"
-        onClose={() => setOpen(false)}
-        open={open}
-      >
-        <Space direction="vertical">
-          <Typography.Title level={5}>Descripcion :</Typography.Title>
-          <Typography.Paragraph>{serieSelect.description}</Typography.Paragraph>
-        </Space>
-        <Space direction="vertical">
-          <Typography.Title level={5}>Personajes :</Typography.Title>
-          {serieSelect.characters.map((character) => (
-            <Row justify={"start"}>
-              <Avatar size="small" icon={<UserOutlined />} />
-              <Typography.Paragraph>{character}</Typography.Paragraph>
-            </Row>
+      <Box sx={{ height: 50 }}>
+        <ResponsiveAppBar />
+      </Box>
+      <Box key={"xd"}>
+        <Grid container spacing={1} direction={"row"}>
+          {dataSeries.map((serie, index) => (
+            <Grid item>
+              <CardSerie {...serie} showDrawer={showDrawer} />
+            </Grid>
           ))}
-        </Space>
-      </Drawer>
-      {dataSeries.map((serie) => (
-        <Col xs={24} sm={12} md={12} lg={8} xl={8} xxl={6}>
-          <CardSerie {...serie} showDrawer={showDrawer} />
-        </Col>
-      ))}
-    </Row>
+        </Grid>
+      </Box>
     </>
   );
 }
